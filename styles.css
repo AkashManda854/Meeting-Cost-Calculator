@@ -1,0 +1,525 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #6366f1;
+    --secondary-color: #8b5cf6;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --light-bg: #f8fafc;
+    --border-color: #e2e8f0;
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 40px 20px;
+    background: var(--bg-gradient);
+    color: white;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* Sections */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.section {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 10px;
+}
+
+.section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper input,
+.input-text,
+.input-number {
+    padding: 12px 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input-wrapper input:focus,
+.input-text:focus,
+.input-number:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.unit {
+    position: absolute;
+    right: 15px;
+    color: var(--text-light);
+    font-weight: 500;
+    pointer-events: none;
+}
+
+.input-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 15px;
+    align-items: flex-end;
+}
+
+.currency {
+    position: absolute;
+    right: 15px;
+    bottom: 12px;
+    color: var(--text-light);
+    font-weight: 500;
+    pointer-events: none;
+}
+
+.input-number {
+    padding-right: 50px;
+    flex: 1;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-primary,
+.btn-add {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover,
+.btn-add:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+}
+
+.btn-remove {
+    background: var(--danger-color);
+    color: white;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+}
+
+.btn-remove:hover {
+    background: #dc2626;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: var(--text-light);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: var(--text-dark);
+}
+
+/* Participants */
+.participants-section {
+    margin-top: 25px;
+}
+
+.add-participant-form {
+    background: var(--light-bg);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px dashed var(--border-color);
+}
+
+.add-participant-form .input-text {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.participants-list {
+    display: grid;
+    gap: 12px;
+}
+
+.participant-item {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    gap: 15px;
+    align-items: center;
+    padding: 15px;
+    background: var(--light-bg);
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.participant-item:hover {
+    background: #f1f5f9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.participant-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.participant-name {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.participant-cost {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.participant-cost-value {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+/* Cost Summary */
+.cost-summary {
+    background: linear-gradient(135deg, #f0f4ff 0%, #f3e8ff 100%);
+    border: 2px solid var(--primary-color);
+}
+
+.cost-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.cost-item {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.cost-label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.cost-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.total-cost-item {
+    grid-column: span 3;
+    background: var(--bg-gradient);
+    color: white;
+}
+
+.total-cost-item .cost-label {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.total-amount {
+    font-size: 2.5rem;
+    color: white;
+}
+
+/* Meeting Assessment */
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    resize: vertical;
+    transition: all 0.3s ease;
+}
+
+textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.char-count {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: 5px;
+    text-align: right;
+}
+
+.recommendation-box {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid var(--warning-color);
+    background: rgba(245, 158, 11, 0.05);
+}
+
+.recommendation-box.hidden {
+    display: none;
+}
+
+.recommendation-box.green {
+    border-left-color: var(--success-color);
+    background: rgba(16, 185, 129, 0.05);
+}
+
+.recommendation-box.red {
+    border-left-color: var(--danger-color);
+    background: rgba(239, 68, 68, 0.05);
+}
+
+.recommendation-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.recommendation-icon {
+    font-size: 1.5rem;
+}
+
+.recommendation-content {
+    color: var(--text-light);
+    line-height: 1.8;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.recommendation-content p {
+    margin: 0;
+}
+
+/* Meeting History */
+.meeting-history-controls {
+    text-align: center;
+    padding: 20px;
+}
+
+.meeting-history.hidden {
+    display: none;
+}
+
+#saveMeetingBtn {
+    margin-bottom: 20px;
+}
+
+.meetings-list {
+    display: grid;
+    gap: 15px;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.meeting-card {
+    padding: 20px;
+    background: var(--light-bg);
+    border-radius: 10px;
+    border-left: 4px solid var(--secondary-color);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    align-items: start;
+}
+
+.meeting-card-info {
+    display: grid;
+    gap: 8px;
+}
+
+.meeting-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+
+.meeting-meta {
+    display: grid;
+    gap: 4px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.meeting-cost {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: right;
+}
+
+.meeting-date {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    text-align: right;
+}
+
+.btn-delete {
+    background: var(--danger-color);
+    color: white;
+    padding: 8px 15px;
+    font-size: 0.85rem;
+}
+
+.btn-delete:hover {
+    background: #dc2626;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .cost-box {
+        grid-template-columns: 1fr;
+    }
+
+    .total-cost-item {
+        grid-column: span 1;
+    }
+
+    .participant-item {
+        grid-template-columns: 1fr;
+    }
+
+    .add-participant-form .input-row {
+        grid-template-columns: 1fr;
+    }
+
+    .meeting-card {
+        grid-template-columns: 1fr;
+    }
+
+    .meeting-cost,
+    .meeting-date {
+        text-align: left;
+    }
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.participant-item,
+.meeting-card {
+    animation: slideIn 0.3s ease;
+}
+
+/* Scrollbar styling */
+.meetings-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.meetings-list::-webkit-scrollbar-track {
+    background: var(--light-bg);
+    border-radius: 10px;
+}
+
+.meetings-list::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+.meetings-list::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
