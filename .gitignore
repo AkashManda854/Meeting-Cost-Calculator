@@ -10,3 +10,13 @@ dist/
 *.swo
 *~
 .pem
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+meetings.db
+# IDE
+.vscode/
+# OS
+.DS_Store
+Thumbs.db
